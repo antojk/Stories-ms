@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.netflix.appinfo.InstanceInfo;
-import com.netflix.discovery.EurekaClient;
+import com.netflix.discovery.DiscoveryClient;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @Service
@@ -26,7 +26,7 @@ public class StoryService {
 			"<p>A long time ago in a galaxy far, far away...</p><img src='%s' style='height: 150px;'/></p>", };
 
 	@Autowired
-	private EurekaClient discoveryClient;
+	private DiscoveryClient discoveryClient;
 
 	private RestTemplate restTemplate = new RestTemplate();
 
